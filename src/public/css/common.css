@@ -5,7 +5,6 @@
     background:linear-gradient(45deg,#f2cfbf, #f8a0dd);
 }
 
-/* カード */
 .auth-card {
     width: min(560px, 92vw);
     background: #fff;
@@ -15,7 +14,6 @@
     text-align: center;
 }
 
-/* ブランドロゴ風 */
 .brand {
     margin: 0 0 8px;
     font-size: 46px;

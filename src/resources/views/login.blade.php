@@ -27,7 +27,6 @@
     <button type="submit" class="auth-button">ログイン</button>
 </form>
 
-<a class="auth-link" href="{{--{{ route('register') }}--}}">アカウント作成はこちら</a>
-
+<a class="auth-link" href="{{ route('register.step1') }}">アカウント作成はこちら</a>
 @endsection
 

@@ -9,4 +9,7 @@ class WeightController extends Controller
     public function showLogin(){
         return view('login');
     }
+    public function registerStep1(){
+        return view('register_step1');
+    }
 }
