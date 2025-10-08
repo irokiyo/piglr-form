@@ -23,7 +23,7 @@ Route::post('/logout', [WeightController::class, 'logout'])->name('logout'); //�
 
 Route::get('/register/step1', [WeightController::class, 'registerStep1'])->name('register.step1'); //会員登録の画面表示
 Route::post('/register/step1', [WeightController::class, 'storeStep1'])->name('register.step1.store'); //会員の情報登録
-Route::post('/register/step2', [WeightController::class, 'registerStep2'])->name('register.step2'); //初期目標体重登録画面の表示
+Route::get('/register/step2', [WeightController::class, 'registerStep2'])->name('register.step2'); //初期目標体重登録画面の表示
 Route::post('/register/step2', [WeightController::class, 'storeStep2'])->name('register.step2.store'); //初期目標体重登録
 
 Route::get('/weight_logs', [WeightController::class, 'index'])->name('index'); //トップページ(管理画面)
