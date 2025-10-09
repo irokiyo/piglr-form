@@ -89,13 +89,10 @@
             </table>
         </div>
 
-        {{-- ページネーション
-        @if (method_exists($logs, 'links'))
+        {{-- ページネーション--}}
         <div class="pagination">
-            {{ $logs->onEachSide(1)->links('vendor.pagination.simple-default') }}
+            {{ $weightLogs->links('vendor.pagination.bootstrap-4') }}
         </div>
-        @endif--}}
-
     </section>
 </div>
 @endif

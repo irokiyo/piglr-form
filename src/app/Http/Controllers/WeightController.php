@@ -39,16 +39,16 @@ class WeightController extends Controller
         WeightLog::create($logWeight);
 
         $userId = auth()->id();
-        $weightLogs = WeightLog::where('user_id', $userId)->get();
-        $weightTargets = WeightTarget::where('user_id', $userId)->get();
+        $weightLogs = WeightLog::where('user_id', $userId)->paginate(8);
+        $weightTargets = WeightTarget::where('user_id', $userId)->paginate(8);;
 
         return view('index',compact('weightLogs','weightTargets'));
     }
     //管理画面の表示
     public function index(){
         $userId = auth()->id();
-        $weightLogs = WeightLog::where('user_id', $userId)->get();
-        $weightTargets = WeightTarget::where('user_id', $userId)->get();
+        $weightLogs = WeightLog::where('user_id', $userId)->paginate(8);
+        $weightTargets = WeightTarget::where('user_id', $userId)->paginate(8);
 
         return view('index',compact('weightLogs','weightTargets'));
     }

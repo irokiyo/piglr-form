@@ -118,7 +118,9 @@ body{
 }
 
 .input-date {
-    min-width: 160px
+    min-width: 160px;
+    color: #ddd;
+    
 }
 
 .range-sep {
@@ -140,7 +142,7 @@ body{
     font-weight: 600;
     text-align: left;
     padding: 12px;
-    border-bottom: 1px solid #eee
+    border-bottom: 1px solid #d89fd7
 }
 
 .table tbody td {
@@ -148,9 +150,6 @@ body{
     border-top: 1px solid #f1f1f1
 }
 
-.table tbody tr:hover {
-    background: #fcfcff
-}
 
 .col-actions {
     text-align: right;
@@ -166,18 +165,34 @@ body{
     border-radius: 6px
 }
 
-.icon-btn:hover {
-    background: #f2f2f6
-}
-
-.empty {
-    text-align: center;
-    color: #999;
-    padding: 28px
-}
-
 .pagination {
     display: flex;
     justify-content: center;
     padding: 12px
+}
+.pagination ul {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.pagination li a ,
+.pagination li span{
+    display: inline-flex;
+    min-width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: gainsboro;
+    box-shadow: var(--shadow);
+}
+
+.pagination li.active span {
+    background: linear-gradient(90deg, #b77ce7, #ff7db8);
+    border-color: transparent;
+    font-weight: 700;
 }
