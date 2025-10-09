@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+@if (Auth::check())
 <div class="admin-shell">
 
     
@@ -101,5 +102,7 @@
 
     </section>
 </div>
+@endif
 @endsection
+
 
