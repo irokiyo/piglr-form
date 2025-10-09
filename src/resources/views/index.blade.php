@@ -55,8 +55,8 @@
                 <button type="submit" class="btn btn-dark">検索</button>
             </form>
 
-            {{-- 追加はモーダルや別画面でもOK。ここでは別画面GET想定 
-            <a href="{{ route('weight_logs.create.form') }}" class="btn btn-accent">データ追加</a>
+            {{-- 追加はモーダルや別画面でもOK。ここでは別画面GET想定--}}
+            <a href="" class="btn btn-accent">データ追加</a>
         </div>
 
         {{--一覧テーブル--}}
@@ -68,7 +68,7 @@
                         <th>体重</th>
                         <th>食事摂取カロリー</th>
                         <th>運動時間</th>
-                        <th class="col-actions">操作</th>
+                        <th class="col-actions"></th>
                     </tr>
                 </thead>
                 <tbody>

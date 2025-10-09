@@ -1,3 +1,7 @@
+body{
+    background: #efeeee;
+}
+
 .admin-shell {
     max-width: 1100px;
     margin: 24px auto;
@@ -9,6 +13,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
+    background: white;
+    border-bottom: 2px solid gainsboro;
+    padding: 10px;
 }
 
 .brand {
@@ -39,9 +46,11 @@
 }
 
 .btn-dark {
-    background: #555;
+    background: #a8a7a7;
     color: #fff;
-    border-color: #555
+    border-color: #a8a7a7;
+    margin: 0 10px;
+    padding: 0 40px;
 }
 
 .btn-accent {
@@ -50,21 +59,18 @@
     border: none
 }
 
-.icon-left .icon {
-    margin-right: 6px
-}
 
 .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin: 18px 0
+    margin: 18px 0;
+    border-radius: 12px;
+    border: 3px solid #eee;
+    overflow: hidden;
 }
 
 .stat-card {
     background: #fff;
-    border: 1px solid #eee;
-    border-radius: 12px;
     padding: 18px
 }
 
@@ -81,14 +87,6 @@
 
 .stat-value .unit {
     color: #888
-}
-
-.stat-value.is-below .num {
-    color: #38a169
-}
-
-.stat-value.is-over .num {
-    color: #e53e3e
 }
 
 .panel {
@@ -129,8 +127,6 @@
 
 .table-wrap {
     overflow: auto;
-    border-radius: 8px;
-    border: 1px solid #eee
 }
 
 .table {
@@ -140,7 +136,6 @@
 }
 
 .table thead th {
-    background: #fafafa;
     color: #666;
     font-weight: 600;
     text-align: left;
