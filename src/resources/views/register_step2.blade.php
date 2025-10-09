@@ -21,7 +21,7 @@
 
     <div class="form-group">
         <label for="" class="form-label">目標の体重</label>
-        <input id="target-weight" name="target-weight" type="text" class="form-input" placeholder="目標体重を入力" >kg
+        <input id="target_weight" name="target_weight" type="text" class="form-input" placeholder="目標体重を入力" value="{{ old('target_weight') }}">kg
         @error('target-weight') <p class="form-error">{{ $message }}</p> @enderror
     </div>
     <button type="submit" class="auth-button">アカウント作成</button>

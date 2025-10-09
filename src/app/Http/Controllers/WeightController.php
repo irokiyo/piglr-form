@@ -22,11 +22,23 @@ class WeightController extends Controller
         auth()->login($user);
 
         return view('register_step2');
-
     }
     //新規登録2の画面表示
     public function registerStep2(){
         return view('register_step2');
+    }
+    //新規登録2
+    public function storeStep2(Request $request){
+        $targetWeight = $request->only(['target_weight']);
+        $logWeight = $request->only(['weight']);
+        $targetWeight['user_id'] = auth()->id();
+        $logWeight['user_id'] = auth()->id();
+        $logWeight['date'] =now()->toDateString();
+        
+        WeightTarget::create($targetWeight);
+        WeightLog::create($logWeight);
+
+        return view('index');
     }
     //管理画面の表示
     public function index(){
