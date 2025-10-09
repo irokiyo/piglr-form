@@ -59,7 +59,7 @@
             <a href="{{ route('weight_logs.create.form') }}" class="btn btn-accent">データ追加</a>
         </div>
 
-        {{-- 一覧テーブル 
+        {{--一覧テーブル--}}
         <div class="table-wrap">
             <table class="table">
                 <thead>
@@ -72,28 +72,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($logs as $log)
+                    @foreach ($weightLogs as $weightLog)
                     <tr>
-                        <td>{{ \Illuminate\Support\Carbon::parse($log->date)->format('Y/m/d') }}</td>
-                        <td>{{ number_format($log->weight, 1) }}kg</td>
-                        <td>{{ number_format($log->calories) }}cal</td>
-                        <td>{{ str_pad(intval($log->exercise_time / 60), 2, '0', STR_PAD_LEFT) }}:{{ str_pad($log->exercise_time % 60, 2, '0', STR_PAD_LEFT) }}</td>
+                        <td>{{ $weightLog->date }}</td>
+                        <td>{{ $weightLog->weight}}kg</td>
+                        <td>{{($weightLog->calories) }}cal</td>
+                        <td>{{$weightLog->exercise_time }}</td>
                         <td class="col-actions">
-                            <a href="{{ route('show', ['weightLogId' => $log->id]) }}" class="icon-btn" aria-label="編集">
+                            <a href="" class="icon-btn" aria-label="詳細">
                                 ✏️
                             </a>
                         </td>
                     </tr>
-                    @empty
-                    <tr>
-                        <td colspan="5" class="empty">データがありません</td>
-                    </tr>
-                    @endforelse
+                    @endforeach
                 </tbody>
             </table>
         </div>
 
-        {{-- ページネーション 
+        {{-- ページネーション
         @if (method_exists($logs, 'links'))
         <div class="pagination">
             {{ $logs->onEachSide(1)->links('vendor.pagination.simple-default') }}
