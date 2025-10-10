@@ -54,12 +54,15 @@
                 @if($hasSearch)
                 <a href="{{ route('index') }}" class="btn-reset">リセット</a>
                 @endif
-                </form>
-
             </form>
-
             <a href="" class="btn btn-accent">データ追加</a>
         </div>
+        @if($hasSearch)
+        <p class="search-text">{{ request('from')??'指定無し' }}~{{ request('to')??'指定無し' }}の検索結果 {{ $weightLogs->total() }} 件</p>
+
+
+        @endif
+
 
         {{--一覧テーブル--}}
         <div class="table-wrap">

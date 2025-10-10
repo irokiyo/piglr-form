@@ -69,7 +69,7 @@ class WeightController extends Controller
         if ($request->filled('to')){
             $query->whereDate('date','<=',$request->input('to'));
         }
-        $weightLogs =$query->paginate(6)->withQueryString();
+        $weightLogs =$query->paginate(8)->withQueryString();
 
         $hasSearch=$request->filled('from') || $request->filled('to');
         

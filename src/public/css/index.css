@@ -63,6 +63,9 @@ body{
     border-radius: 5px;
     font-size: 13px;
 }
+.search-text{
+    display: block;
+}
 
 .btn-accent {
     background: linear-gradient(90deg, #b77ce7, #ff7db8);
