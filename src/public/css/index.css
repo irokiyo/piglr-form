@@ -49,8 +49,19 @@ body{
     background: #a8a7a7;
     color: #fff;
     border-color: #a8a7a7;
-    margin: 0 10px;
+    margin: 0 5px;
     padding: 0 40px;
+}
+.btn-reset{
+    border-color: #a8a7a7;
+    color: #a8a7a7;
+    background: white;
+    margin: 0 10px;
+    padding: 7px 15px;
+    text-decoration: none;
+    border: 1px solid #a8a7a7;
+    border-radius: 5px;
+    font-size: 13px;
 }
 
 .btn-accent {
@@ -149,7 +160,9 @@ body{
     padding: 12px;
     border-top: 1px solid #f1f1f1
 }
-
+.table__data:hover{
+    transform: scale(1.05);
+}
 
 .col-actions {
     text-align: right;

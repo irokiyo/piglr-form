@@ -51,6 +51,11 @@
                     <input type="date" name="to" value="{{ request('to') }}" class="input input-date" placeholder="年/月/日">
                 </div>
                 <button type="submit" class="btn btn-dark">検索</button>
+                @if($hasSearch)
+                <a href="{{ route('index') }}" class="btn-reset">リセット</a>
+                @endif
+                </form>
+
             </form>
 
             <a href="" class="btn btn-accent">データ追加</a>
@@ -71,10 +76,10 @@
                 <tbody>
                     @foreach ($weightLogs as $weightLog)
                     <tr>
-                        <td>{{ $weightLog->date }}</td>
-                        <td>{{ $weightLog->weight}}kg</td>
-                        <td>{{($weightLog->calories) }}cal</td>
-                        <td>{{$weightLog->exercise_time }}</td>
+                        <td class="table__data">{{ $weightLog->date }}</td>
+                        <td class="table__data">{{ $weightLog->weight}}kg</td>
+                        <td class="table__data">{{($weightLog->calories) }}cal</td>
+                        <td class="table__data" {{$weightLog->exercise_time }}</td>
                         <td class="col-actions">
                             <a href="" class="icon-btn" aria-label="詳細">
                                 ✏️

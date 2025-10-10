@@ -46,7 +46,7 @@ class WeightController extends Controller
         return view('index',compact('weightLogs','weightTargets'));
     }
     //管理画面の表示
-    public function index(){
+    public function index(Request $request){
         $userId = auth()->id();
         //目標体重
         $weightTarget = WeightTarget::where('user_id', $userId)->first();
@@ -54,8 +54,31 @@ class WeightController extends Controller
         $latestWeight = WeightLog::where('user_id', $userId)->latest()->first();
         //一覧表示
         $weightLogs = WeightLog::where('user_id', $userId)->paginate(8);
+        $hasSearch=$request->filled('from') || $request->filled('to');
 
-        return view('index',compact('weightLogs','weightTarget','latestWeight'));
+        return view('index',compact('weightLogs','weightTarget','latestWeight','hasSearch'));
+    }
+    //検索
+    public function search(Request $request){
+        $userId = auth()->id();
+        //検索
+        $query= WeightLog::where('user_id', $userId)->orderByDesc('date');
+        if ($request->filled('from')) {
+            $query->whereDate('date','>=',$request->input('from'));
+        }
+        if ($request->filled('to')){
+            $query->whereDate('date','<=',$request->input('to'));
+        }
+        $weightLogs =$query->paginate(6)->withQueryString();
+
+        $hasSearch=$request->filled('from') || $request->filled('to');
+        
+        //目標体重
+        $weightTarget = WeightTarget::where('user_id', $userId)->first();
+        //最新体重
+        $latestWeight = WeightLog::where('user_id', $userId)->latest()->first();
+        return view('index',compact('weightLogs','weightTarget','latestWeight','hasSearch'));
+
     }
     //ログアウト
     public function logout(Request $request){
