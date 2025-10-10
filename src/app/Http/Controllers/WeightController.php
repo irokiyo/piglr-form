@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\WeightLog;
 use App\Models\WeightTarget;
 use App\Models\User;
@@ -55,5 +56,13 @@ class WeightController extends Controller
         $weightLogs = WeightLog::where('user_id', $userId)->paginate(8);
 
         return view('index',compact('weightLogs','weightTarget','latestWeight'));
+    }
+    //ログアウト
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();//セキュリティ関連
+        
+        return view('login');
     }
 }
