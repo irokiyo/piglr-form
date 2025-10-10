@@ -47,10 +47,13 @@ class WeightController extends Controller
     //管理画面の表示
     public function index(){
         $userId = auth()->id();
+        //目標体重
+        $weightTarget = WeightTarget::where('user_id', $userId)->first();
+        //最新体重
+        $latestWeight = WeightLog::where('user_id', $userId)->latest()->first();
+        //一覧表示
         $weightLogs = WeightLog::where('user_id', $userId)->paginate(8);
-        $weightTargets = WeightTarget::where('user_id', $userId)->paginate(8);
 
-        return view('index',compact('weightLogs','weightTargets'));
+        return view('index',compact('weightLogs','weightTarget','latestWeight'));
     }
-    
 }

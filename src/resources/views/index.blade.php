@@ -1,4 +1,4 @@
-{{-- resources/views/index.blade.php --}}
+
 @extends('layouts.admin')
 
 @section('css')
@@ -10,14 +10,12 @@
 @if (Auth::check())
 <div class="admin-shell">
 
-    
-
     {{-- 上段カード：目標/差分/最新 --}}
     <section class="stats">
         <article class="stat-card">
             <p class="stat-label">目標体重</p>
             <p class="stat-value">
-                <span class="num">50</span>
+                <span class="num">{{ $weightTarget->target_weight}}</span>
                 <span class="unit">kg</span>
             </p>
         </article>
@@ -25,7 +23,7 @@
         <article class="stat-card">
             <p class="stat-label">目標まで</p>
             <p class="stat-value">
-                <span class="num">50</span>
+                <span class="num">{{ $latestWeight->weight- $weightTarget->target_weight}}</span>
                 <span class="unit">kg</span>
             </p>
         </article>
@@ -33,7 +31,7 @@
         <article class="stat-card">
             <p class="stat-label">最新体重</p>
             <p class="stat-value">
-                <span class="num">50</span>
+                <span class="num">{{ $latestWeight->weight}}</span>
                 <span class="unit">kg</span>
             </p>
         </article>
@@ -55,7 +53,6 @@
                 <button type="submit" class="btn btn-dark">検索</button>
             </form>
 
-            {{-- 追加はモーダルや別画面でもOK。ここでは別画面GET想定--}}
             <a href="" class="btn btn-accent">データ追加</a>
         </div>
 
