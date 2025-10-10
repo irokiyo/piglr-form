@@ -29,6 +29,8 @@ Laravel環境構築
 5.php artisan key:generate  
 6.php artisan migrate  
 7.php artisan seed  
+8.composer require laravel/fortify  
+9.php artisan vendor:publish --tag=laravel-pagination  
 
 ## 使用技術(実行環境)
 MySQL 8.0.26  
