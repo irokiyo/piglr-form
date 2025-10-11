@@ -38,10 +38,12 @@ Laravel: 8.83.3
 PHP 8.1 (Docker)
 
 ## ER図
-![ER図](docs/er-diagram.png)
+
 
 ## URL
 開発環境：http://localhost/  
 phpMyAdmin http://localhost/8080/
 
 ## ログイン情報
+メールアドレス  
+パスワード　password

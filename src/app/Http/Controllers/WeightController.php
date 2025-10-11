@@ -72,12 +72,20 @@ class WeightController extends Controller
         $weightLogs =$query->paginate(8)->withQueryString();
 
         $hasSearch=$request->filled('from') || $request->filled('to');
-        
+
         //目標体重
         $weightTarget = WeightTarget::where('user_id', $userId)->first();
         //最新体重
         $latestWeight = WeightLog::where('user_id', $userId)->latest()->first();
         return view('index',compact('weightLogs','weightTarget','latestWeight','hasSearch'));
+    }
+    //データ登録
+    public function store(Request $request){
+        $userId = auth()->id();
+
+        
+
+        return view('index');
 
     }
     //ログアウト
