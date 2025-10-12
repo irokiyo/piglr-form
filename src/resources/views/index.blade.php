@@ -80,7 +80,7 @@
                         <td class="table__data">{{($weightLog->calories) }}cal</td>
                         <td class="table__data" {{$weightLog->exercise_time }}</td>
                         <td class="col-actions">
-                            <a href="#" class="icon-btn" aria-label="詳細">
+                            <a href="" class="icon-btn" aria-label="詳細">
                                 ✏️
                             </a>
                         </td>
@@ -145,7 +145,7 @@
                         <button type="submit" class="btn btn--primary">登録</button>
                     </div>
                 </form>
-            </div>
+        </div>
         </div>
 
 

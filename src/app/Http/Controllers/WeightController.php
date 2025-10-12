@@ -83,10 +83,11 @@ class WeightController extends Controller
     public function store(Request $request){
         $userId = auth()->id();
 
-        
+        $weightLog = $request->only(['date','weight', 'calories','exercise_time','exercise_content']);
+        $weightLog['user_id'] = $userId;
+        WeightLog::create($weightLog);
 
-        return view('index');
-
+        return redirect()->route('index');
     }
     //ログアウト
     public function logout(Request $request){
