@@ -29,8 +29,8 @@ Route::post('/register/step2', [WeightController::class, 'storeStep2'])->name('r
 Route::get('/weight_logs', [WeightController::class, 'index'])->middleware('auth')->name('index'); //トップページ(管理画面)
 Route::post('/weight_logs/create', [WeightController::class, 'store'])->name('store'); //体重登録
 Route::get('/weight_logs/search', [WeightController::class, 'search'])->name('search'); //体重検索
-Route::get('/weight_logs/{:weightLogId}', [WeightController::class, 'show'])->name('show'); //体重詳細
-Route::patch('/weight_logs/{:weightLogId}/update', [WeightController::class, 'update'])->name('update'); //体重更新
-Route::delete('/weight_logs/{:weightLogId}/delete', [WeightController::class, 'delete'])->name('delete'); //体重削除
+Route::get('/weight_logs/{weightLogId}', [WeightController::class, 'show'])->name('show'); //体重詳細
+Route::patch('/weight_logs/{weightLogId}/update', [WeightController::class, 'update'])->name('update'); //体重更新
+Route::delete('/weight_logs/{weightLogId}/delete', [WeightController::class, 'delete'])->name('delete'); //体重削除
 
 

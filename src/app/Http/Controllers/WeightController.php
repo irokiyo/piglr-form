@@ -89,6 +89,14 @@ class WeightController extends Controller
 
         return redirect()->route('index');
     }
+    //体重詳細画面
+    public function show($weightLogId){
+        $userId = auth()->id();
+
+        $weightLog = WeightLog::where('user_id', $userId)->findOrFail($weightLogId);
+
+        return view('show',compact('weightLog'));
+    }
     //ログアウト
     public function logout(Request $request){
         Auth::logout();

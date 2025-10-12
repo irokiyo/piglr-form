@@ -80,7 +80,7 @@
                         <td class="table__data">{{($weightLog->calories) }}cal</td>
                         <td class="table__data" {{$weightLog->exercise_time }}</td>
                         <td class="col-actions">
-                            <a href="" class="icon-btn" aria-label="詳細">
+                            <a href="{{ route('show',$weightLog->id) }}" class="icon-btn" aria-label="詳細">
                                 ✏️
                             </a>
                         </td>

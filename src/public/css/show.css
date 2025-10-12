@@ -1,0 +1,150 @@
+/* ページ全体 */
+
+body {
+    background: #efeeee;
+}
+
+.wl-edit {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.wl-edit__card {
+    width: min(880px, 92vw);
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #eee;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+    padding: 28px;
+}
+
+.wl-edit__title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #333;
+    margin: 0 0 18px;
+}
+
+/* フォーム */
+.wl-form {
+    display: grid;
+    gap: 16px;
+}
+
+.wl-form__group {
+    display: grid;
+    gap: 8px;
+}
+
+.wl-form__label {
+    font-size: 14px;
+    color: #444;
+    font-weight: 700;
+}
+
+.wl-form__control {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    padding: 12px 12px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.wl-form__control--textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.wl-form__control:hover {
+    border-color: #d9c47b;
+}
+
+.wl-form__control:focus {
+    border-color: #c49a26;
+    box-shadow: 0 0 0 3px rgba(196, 154, 38, .16);
+}
+
+.wl-form__group--with-unit .wl-form__controlWrap {
+    position: relative;
+}
+
+.wl-form__unit {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8a8a8a;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.wl-form__error {
+    color: #c0392b;
+    font-size: 12px;
+}
+
+/* アクション */
+.wl-edit__actions {
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn {
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    font-weight: 800;
+    padding: 12px 22px;
+    border-radius: 9999px;
+    transition: transform .05s ease, box-shadow .15s;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn--ghost {
+    background: #eee;
+    color: #444;
+}
+
+.btn--ghost:hover {
+    background: #e6e6e6;
+}
+
+.btn--primary {
+    color: #fff;
+    background: linear-gradient(90deg, #8e75ff, #ff90c2);
+    box-shadow: 0 8px 18px rgba(142, 117, 255, .28);
+}
+
+.btn--primary:hover {
+    box-shadow: 0 10px 22px rgba(142, 117, 255, .35);
+}
+
+/* 削除ボタン（右端にゴミ箱アイコン） */
+.wl-edit__delete {
+    margin-left: auto;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    line-height: 1;
+    padding: 6px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #cc3b3b;
+}
+
+.icon-btn:hover {
+    background: #fdecea;
+}
