@@ -97,6 +97,17 @@ class WeightController extends Controller
 
         return view('show',compact('weightLog'));
     }
+    //体重更新
+    public function update(Request $request,$weightLogId){
+        $userId = auth()->id();
+        $weightLog=$request->all();
+        $weightLog['user_id'] = $userId;
+        unset($weightLog['_token']);
+
+        WeightLog::where('user_id', $userId)->findOrFail($weightLogId)->update($weightLog);
+
+        return redirect()->route('index');
+    }
     //ログアウト
     public function logout(Request $request){
         Auth::logout();

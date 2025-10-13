@@ -14,7 +14,6 @@
 
         {{-- 更新フォーム --}}
         <form class="wl-form" method="POST" action="{{ route('update',$weightLog->id) }}">
-
             @csrf
             @method('PATCH')
 
@@ -64,20 +63,18 @@
                 <a href="{{ route('index') }}" class="btn btn--ghost">戻る</a>
 
                 <button type="submit" class="btn btn--primary">更新</button>
-
-                {{-- 削除 --}}
-                <form method="POST" action="{{ route('delete',$weightLog->id) }}" class="wl-edit__delete">
-
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="icon-btn" title="削除" onclick="return">
-                        🗑️
-                    </button>
-                </form>
-            </div>
         </form>
-
+        {{-- 削除 --}}
+        <form method="POST" action="{{ route('delete',$weightLog->id) }}" class="wl-edit__delete">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="icon-btn" title="削除" onclick="return">
+                🗑️
+            </button>
+        </form>
     </div>
+
+</div>
 </div>
 @endif
 @endsection
