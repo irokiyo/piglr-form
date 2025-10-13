@@ -108,6 +108,14 @@ class WeightController extends Controller
 
         return redirect()->route('index');
     }
+    //体重削除
+    public function delete($weightLogId){
+        $userId = auth()->id();
+
+        WeightLog::where('user_id', $userId)->findOrFail($weightLogId)->delete();
+
+        return redirect()->route('index');
+    }
     //ログアウト
     public function logout(Request $request){
         Auth::logout();
