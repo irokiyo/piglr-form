@@ -45,5 +45,5 @@ PHP 8.1 (Docker)
 phpMyAdmin http://localhost/8080/
 
 ## ログイン情報
-メールアドレス  
+メールアドレス  miyake.kaori@example.org  
 パスワード　password
