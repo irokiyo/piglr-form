@@ -116,6 +116,18 @@ class WeightController extends Controller
 
         return redirect()->route('index');
     }
+    //目標体重設定変更
+    public function targetUpdate(Request $request){
+        $userId = auth()->id();
+        $weightTarget=$request->only(['target_weight']);;
+        $weightTarget['user_id'] = $userId;
+        unset($weightTarget['_token']);
+
+        WeightTarget::where('user_id', $userId)->update($weightTarget);
+
+        return redirect()->route('index');
+
+    }
     //ログアウト
     public function logout(Request $request){
         Auth::logout();

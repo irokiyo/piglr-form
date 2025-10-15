@@ -31,6 +31,7 @@ Route::post('/weight_logs/create', [WeightController::class, 'store'])->name('st
 Route::get('/weight_logs/search', [WeightController::class, 'search'])->name('search'); //体重検索
 Route::get('/weight_logs/{weightLogId}', [WeightController::class, 'show'])->name('show'); //体重詳細
 Route::patch('/weight_logs/{weightLogId}/update', [WeightController::class, 'update'])->name('update'); //体重更新
+Route::patch('/wight_logs/goal_setting', [WeightController::class, 'targetUpdate'])->name('target.update'); //目標体重設定変更
 Route::delete('/weight_logs/{weightLogId}/delete', [WeightController::class, 'delete'])->name('delete'); //体重削除
 
 

@@ -16,8 +16,8 @@
     <header class="admin-header">
         <h1 class="brand">PiGLy</h1>
 
-        <div class="header-actions">
-            <a href="" class="btn btn-ghost icon-left">
+        <div class="header-actions"name="">
+            <a href="#weightTarget" class="btn btn-ghost icon-left">
                 <span class="icon">⚙️</span> 目標体重設定
             </a>
 
@@ -25,8 +25,28 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="btn btn-ghost">ログアウト</button>
+
             </form>
         </div>
+        {{-- モーダル　目標体重設定 --}}
+        <div id="weightTarget" class="modal" role="dialog" aria-modal="true">
+            <a href="#" class="modal__backdrop" aria-hidden="true"></a>
+
+            <div class="card">
+                <form action="{{ route('target.update') }}" class="card__form" method="post">
+                    @csrf
+                    @method('PATCH')
+                    <h1 class="h1">目標体重設定</h1>
+                    <input class="target-input" name="target_weight" value="{{ old('target_weight') }}">kg
+                    <div class="action__btn">
+                        <a href="{{ route('index') }}" class="btn-back">戻る</a>
+                        <button type="submit" class="btn-update">更新</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
     </header>
 
     @yield('content')

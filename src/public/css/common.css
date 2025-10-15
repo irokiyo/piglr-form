@@ -81,3 +81,84 @@
     border-radius: 5px;
     font-size: 13px;
 }
+
+modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+}
+/* モーダルを開いたとき */
+.modal:target {
+    display: block;
+}
+
+.modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: block;
+}
+.card {
+    position: relative;
+    margin: 4rem auto;
+    width: min(92vw, 560px);
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid #eee;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+}
+.card {
+    width: 470px;
+    height: 298px;
+    margin: 15% auto;
+    padding: 30px 20px 30px 20px;
+    position: relative;
+    justify-content: center;
+
+}
+.h1{
+    font-size: 30px;
+    color: #333333;
+    height: 45px;
+    text-align: center;
+}
+.target-input{
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    height: 45px;
+    width: 90%;
+    margin: 0 5px 0 0;
+}
+.action__btn{
+    width: 430px;
+    height: 50px;
+    margin: 30px auto;
+    gap: 10px;
+}
+.btn-back{
+    width: 200px;
+    height: 50px;
+    background: #E0DFDE;
+    border-radius: 6px;
+    text-decoration: none;
+    color: black;
+    padding: 13px 10px;
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 5px 0 0;
+}
+.btn-update{
+    width: 200px;
+    height: 50px;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #A3A6E1, #FFABD9);
+    color: white;
+    font-size: 18px;
+    margin: 0 0 0 5px;
+}
