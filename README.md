@@ -1,9 +1,9 @@
-# アプリケーション名
-mogitate-form
+
+# PigLy
 
 
 ## 環境構築
-Dokerビルド  
+### Dokerビルド  
 
 1.git clone git@github.com:Estra-Coachtech/laravel-docker-template.git  
 2.mv laravel-docker-template pigly-form  
@@ -14,7 +14,7 @@ Dokerビルド
 7.git push origin main  
 8.docker-compose up -d --build  
 
-Laravel環境構築  
+### Laravel環境構築  
 
 1.docker-compose exec php bash  
 2.composer install  
