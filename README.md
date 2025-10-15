@@ -20,12 +20,14 @@ Laravel環境構築
 2.composer install  
 3.cp .env.example .env  
 4.環境変数を  
+```
     DB_CONNECTION=mysql  
     DB_HOST=mysql  
     DB_PORT=3306  
     DB_DATABASE=laravel_db  
     DB_USERNAME=laravel_user 
     DB_PASSWORD=laravel_passに変更  
+```
 5.php artisan key:generate  
 6.php artisan migrate  
 7.php artisan seed  
